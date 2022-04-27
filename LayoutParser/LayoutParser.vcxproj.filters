@@ -36,6 +36,9 @@
     <ClCompile Include="src\Data\Value.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Analysis\Diagnostics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Analysis\SyntaxFacts.h">

@@ -163,7 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Analysis\Diagnostic.cpp" />
+    <ClCompile Include="src\Analysis\Diagnostics.cpp" />
     <ClCompile Include="src\Data\LayoutCollection.cpp" />
     <ClCompile Include="src\Analysis\Lexer.cpp" />
     <ClCompile Include="src\Analysis\Parser.cpp" />
