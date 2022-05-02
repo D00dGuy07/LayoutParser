@@ -124,7 +124,7 @@ SyntaxToken Lexer::Lex()
 
 		int32_t length = m_Position - start;
 		std::string text = m_Text.substr(start, length);
-		return SyntaxToken(SyntaxKind::IdentifierToken, start, text);
+		return SyntaxToken(SyntaxFacts::ParseKeywordKind(text), start, text);
 	}
 
 	// Whitespace

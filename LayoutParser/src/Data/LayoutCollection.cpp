@@ -61,6 +61,12 @@ std::wstring PrettyString(const Value* value)
 		returnString << L"NumberValue(" << value->AsNumber()->GetValue() << L")";
 		return returnString.str();
 	}
+	case ValueKind::Boolean:
+	{
+		std::wstringstream returnString;
+		returnString << L"BooleanValue(" << (value->AsBoolean()->GetValue() ? L"True" : L"Falue") << L")";
+		return returnString.str();
+	}
 	case ValueKind::HexColor:
 	{
 		auto hexColor = value->AsHexColor();
@@ -103,6 +109,9 @@ void LayoutCollection::PrettyPrint(const Value* value, const std::wstring& prope
 		std::wcout << formattedValue << L'\n';
 		return;
 	case ValueKind::Number:
+		std::wcout << formattedValue << L'\n';
+		return;
+	case ValueKind::Boolean:
 		std::wcout << formattedValue << L'\n';
 		return;
 	case ValueKind::HexColor:

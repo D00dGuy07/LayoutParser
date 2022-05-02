@@ -32,6 +32,10 @@ namespace LayoutParser
 
 		EqualsToken,
 		CommaToken,
-		IdentifierToken
+		IdentifierToken,
+
+		// Keywords
+		TrueKeyword,
+		FalseKeyword
 	};
 }

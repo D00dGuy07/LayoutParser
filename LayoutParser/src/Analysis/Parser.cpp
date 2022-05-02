@@ -130,6 +130,9 @@ Value* Parser::ParseValue()
 		const std::string* tokenText = &NextToken().Text;
 		return new StringValue(tokenText->substr(1, tokenText->length() - 2));
 	}
+	case SyntaxKind::TrueKeyword:
+	case SyntaxKind::FalseKeyword:
+		return new BooleanValue(NextToken().Kind == SyntaxKind::TrueKeyword);
 	case SyntaxKind::HexColorToken:
 		return new HexColorValue(NextToken().Text);
 	case SyntaxKind::OpenSquareBracketToken:

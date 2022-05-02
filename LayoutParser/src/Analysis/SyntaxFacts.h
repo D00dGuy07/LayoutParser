@@ -43,6 +43,8 @@ namespace LayoutParser
 			return character == ' ' || character == '\t' || character == '\v' || character == '\f';
 		}
 
+		SyntaxKind ParseKeywordKind(const std::string& keyword);
+
 		// Parser data/helpers
 
 		bool IsExpressionToken(SyntaxKind kind);

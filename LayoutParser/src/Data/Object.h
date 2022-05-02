@@ -21,6 +21,8 @@ namespace LayoutParser
 		inline const Value* LastProperty() const { return std::prev(m_Properties.end())->second; }
 
 		inline bool IsEmpty() const { return m_Properties.empty(); }
+
+		inline const Value* GetProperty(const std::string& identifier) const { return m_Properties.at(identifier); }
 		
 		inline const Value* operator[](const std::string& identifier) const { return m_Properties.at(identifier); }
 		inline const Value* operator[](const char* identifier) const { return m_Properties.at(identifier); }

@@ -24,6 +24,8 @@ namespace LayoutParser
 
 		inline bool IsEmpty() const { return m_Objects.empty(); }
 
+		inline const Object* GetObject(const size_t index) const { return m_Objects.at(index); }
+
 		inline const Object* operator[](const size_t index) const { return m_Objects.at(index); }
 
 		inline Layout& operator=(const Layout& other) = default;
@@ -59,6 +61,8 @@ namespace LayoutParser
 		inline const Layout& LastLayout() const { return std::prev(m_Layouts.end())->second; }
 
 		inline bool IsEmpty() const { return m_Layouts.empty(); }
+
+		inline const Layout& GetLayout(const std::string& identifier) const { return m_Layouts.at(identifier); }
 
 		// These will both throw exceptions if the key is not found
 		inline const Layout& operator[](const std::string& identifier) const { return m_Layouts.at(identifier); }

@@ -113,6 +113,10 @@ const char* DiagnosticCollection::GetSyntaxKindName(SyntaxKind kind)
 		return "CommaToken";
 	case SyntaxKind::IdentifierToken:
 		return "IdentifierToken";
+	case SyntaxKind::TrueKeyword:
+		return "TrueKeyword";
+	case SyntaxKind::FalseKeyword:
+		return "FalseKeyword";
 	default:
 		return "InvalidToken";
 	}

@@ -11,6 +11,7 @@ namespace LayoutParser
 	struct ObjectValue;
 	struct StringValue;
 	struct NumberValue;
+	struct BooleanValue;
 	struct HexColorValue;
 	struct ListValue;
 	struct DictionaryValue;
@@ -20,6 +21,7 @@ namespace LayoutParser
 		Object,
 		String,
 		Number,
+		Boolean,
 		HexColor,
 		List,
 		Dictionary
@@ -40,6 +42,9 @@ namespace LayoutParser
 
 		inline const NumberValue* AsNumber() const 
 		{ return (m_Kind == ValueKind::Number) ? reinterpret_cast<const NumberValue*>(this) : nullptr; }
+
+		inline const BooleanValue* AsBoolean() const
+		{ return (m_Kind == ValueKind::Boolean) ? reinterpret_cast<const BooleanValue*>(this) : nullptr; }
 
 		inline const HexColorValue* AsHexColor() const 
 		{ return (m_Kind == ValueKind::HexColor) ? reinterpret_cast<const HexColorValue*>(this) : nullptr; }
@@ -97,6 +102,18 @@ namespace LayoutParser
 
 	private:
 		float m_Number;
+	};
+
+	struct BooleanValue : public Value
+	{
+	public:
+		BooleanValue(bool boolean)
+			: Value(ValueKind::Boolean), m_Boolean(boolean) {}
+
+		inline bool GetValue() const { return m_Boolean; }
+
+	private:
+		bool m_Boolean;
 	};
 
 	struct HexColorValue : public Value
